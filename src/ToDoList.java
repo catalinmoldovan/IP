@@ -19,7 +19,9 @@ import java.util.stream.Collectors;
         private int index;
         Scanner scn = new Scanner(System.in);
 
-
+        /**
+         * I love Russia. ?
+         */
         public void addTask()
         {
             Task t = new Task();
