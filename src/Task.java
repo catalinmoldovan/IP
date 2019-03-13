@@ -5,9 +5,14 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
+
+/**
+ * A simple task class that provides the task parameters
+ * and task attribute methods
+ */
+
 public class Task implements Comparable, Serializable
 {
-
     private static final long serialVersionUID = 1L;
     private String taskName;
     private String project;
@@ -32,7 +37,6 @@ public class Task implements Comparable, Serializable
         isCompleted = false;
     }
 
-
     public String getProject()
     {
         return project;
@@ -41,9 +45,9 @@ public class Task implements Comparable, Serializable
     public void setProject()
     {
         Scanner scn = new Scanner(System.in);
-        System.out.println("Insert project name: ");
+        System.out.println(">> Insert project name: ");
         project = scn.nextLine();
-        System.out.println("project name is: " + project);
+        System.out.println(">> Project name is: " + project);
     }
 
     public String getTaskName()
@@ -54,18 +58,21 @@ public class Task implements Comparable, Serializable
     public void setTaskName()
     {
         Scanner scn = new Scanner(System.in);
-        System.out.println("Write task name: ");
+        System.out.println(">> Write task name: ");
         taskName = scn.nextLine();
-        System.out.println("Task name is: " + taskName);
+        System.out.println(">> Task name is: " + taskName);
     }
-
 
     public void changeTaskStatus()
     {
         isCompleted = !isCompleted;
     }
-    @Override
 
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    @Override
     public int compareTo(Object t)
     {
         if (date.after(((Task)t).date))
@@ -76,12 +83,24 @@ public class Task implements Comparable, Serializable
         return -1;
     }
 
+    /**
+     * @toStinrg
+     * A method that provides custom printing of all the
+     * attributes that a task has
+     */
+
+    @Override
     public String toString()
     {
-        String s = "Project name: " + project
-                + "\t Task name: " + taskName
-                + "\tDate: " + date
-                + "\tCompleted: " + isCompleted + "\n";
+         String s = ">>------------------------------------------------------------" +
+                  "\n" +
+                    ">>  <Project name>: " + project
+                +   "\n>>  <Task name>: " + taskName
+                +   "\n>>  <Due Date>: " + date
+                +   "\n>>  <Completed>: " + isCompleted
+                +   "\n>>  <Task Description>:" + description  + "\n"
+                +   ">>============================================================"
+                + "\n";
         return s;
     }
 
@@ -94,17 +113,15 @@ public class Task implements Comparable, Serializable
 
     public void setDescription()
     {
-
         Scanner sc =new Scanner(System.in);
 
-        System.out.println("Enter task description\n");
+        System.out.println(">> Enter task description\n");
         description=sc.nextLine();
     }
 
-
     public void setDate()
     {
-        System.out.print("Write date of completion: (Please use \"dd.MM.yyyy \" format): ");
+        System.out.print(">> Write date of completion: (Please use \"dd.MM.yyyy \" format): ");
         Scanner scn = new Scanner(System.in);
 
         boolean success=false;
@@ -116,21 +133,26 @@ public class Task implements Comparable, Serializable
                 success=true;
 
             }   catch (ParseException e)
-
             {
-                System.out.println("Please enter the date in the requested format");
+                System.out.println(">> Please enter the date in the requested format");
             }
         }
         while(!success);
     }
+
+
+    /**
+     * @editTask
+     * Provides a submenu for the customisation of the task
+     * by all known attributes after the task was selected.
+     */
 
     public void editTask()
         {
             prints.editTaskByFactors();
             Scanner scanner = new Scanner(System.in);
             String editChoice=null;
-            String choices[]={"N","T","D","R","P"};
-
+            String choices[]={"1","2","3","4","5"};
 
             while (!Arrays.asList(choices).contains(editChoice))
             {
@@ -138,35 +160,33 @@ public class Task implements Comparable, Serializable
 
                 switch(editChoice)
                 {
-                    case "N":
-                        System.out.println("Enter the new name:");
-                        taskName = scanner.next();
-                        System.out.println("Task was renamed");
+                    case "1":
+                        setTaskName();
+                        System.out.println(">> Task was renamed");
+                        editTask();
                         break;
 
-                    case "T":
+                    case "2":
                         setDate();
-                        break;
+                        return;
 
-                    case "D":
-
+                    case "3":
                         setDescription();
+                        editTask();
                         break;
 
-                    case "P":
-
+                    case "4":
                         setProject();
-                        break;
+                        return;
 
-                    case "R":
+                    case "5":
                         return;
 
                     default:
-                        System.out.println("Please enter a valid option\n");
-
+                        System.out.println(">> Please enter a valid option\n");
 
                 }
             }
 
         }
-}
+    }
