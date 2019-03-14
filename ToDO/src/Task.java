@@ -21,6 +21,11 @@ public class Task implements Comparable, Serializable
     Prints prints = new Prints();
     private String description;
 
+    /**
+     * A task constructor calling parameter
+     * methods for the task.
+     */
+
     public Task()
     {
         setProject();
@@ -29,6 +34,12 @@ public class Task implements Comparable, Serializable
         isCompleted=false;
     }
 
+    /**
+     * Class constructor
+     * @param title the name of the task.
+     * @param project the name of the project.
+     * @param date the date assigned to the tasks.
+     */
     public Task(int title, int project, Date date)
     {
         taskName = Integer.toString(title);
@@ -41,6 +52,11 @@ public class Task implements Comparable, Serializable
     {
         return project;
     }
+
+    /**
+     * Method that modifies the name of
+     * the projects.
+     */
 
     public void setProject()
     {
@@ -55,6 +71,11 @@ public class Task implements Comparable, Serializable
         return taskName;
     }
 
+    /**
+     * Method that modifies the name of
+     * the tasks.
+     */
+
     public void setTaskName()
     {
         Scanner scn = new Scanner(System.in);
@@ -62,6 +83,12 @@ public class Task implements Comparable, Serializable
         taskName = scn.nextLine();
         System.out.println(">> Task name is: " + taskName);
     }
+
+    /**
+     * Method that modifies the state
+     * of the tasks from i.e. completed
+     * or incomplete.
+     */
 
     public void changeTaskStatus()
     {
@@ -72,6 +99,11 @@ public class Task implements Comparable, Serializable
         return isCompleted;
     }
 
+    /**
+     * Method that compares the tasks according to the date assigned.
+     * @param t the task that is compared.
+     * @return integer values to arrange the dates in order.
+     */
     @Override
     public int compareTo(Object t)
     {
@@ -84,9 +116,8 @@ public class Task implements Comparable, Serializable
     }
 
     /**
-     * @toStinrg
-     * A method that provides custom printing of all the
-     * attributes that a task has
+     * Method that configures how the task will be displayed.
+     * @return the stream or the pattern of the task display.
      */
 
     @Override
@@ -104,12 +135,22 @@ public class Task implements Comparable, Serializable
         return s;
     }
 
+    /**
+     * Constructor for the task class
+     * @param name a string that contains the task name.
+     * @param project a string that contains the project name.
+     * @param completed statement of task completion, i.e. true or false.
+     */
     public Task(String name, String project, Boolean completed)
     {
         this.taskName = name;
         this.project = project;
         this.isCompleted = completed;
     }
+
+    /**
+     * Method that modifies the task description
+     */
 
     public void setDescription()
     {
@@ -118,6 +159,10 @@ public class Task implements Comparable, Serializable
         System.out.println(">> Enter task description\n");
         description=sc.nextLine();
     }
+
+    /**
+     * Method that modifies the date of the task
+     */
 
     public void setDate()
     {
@@ -142,7 +187,6 @@ public class Task implements Comparable, Serializable
 
 
     /**
-     * @editTask
      * Provides a submenu for the customisation of the task
      * by all known attributes after the task was selected.
      */

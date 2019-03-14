@@ -3,7 +3,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * @ToDOList class
  * Provides a very simple ToDoList.  New items can be added at the end
  * and removed from any other position.
  * @author CM
@@ -19,6 +18,9 @@ public class ToDoList implements Serializable
     private int index;
     Scanner scn = new Scanner(System.in);
 
+    /**
+     * Method that adds a new task to the list
+     */
 
     public void addTask()
     {
@@ -47,14 +49,19 @@ public class ToDoList implements Serializable
         while (choice.equals("y"));
     }
 
+    /**
+     * Constructor for the ToDoList class
+     */
     public ToDoList()
     {
-
         tasks = new ArrayList();
         index = 0;
     }
 
-
+    /**
+     * Method that displays the current tasks
+     * by date and filtered by project name.
+     */
     public void showList()
     {
         if (tasks.size() == 0)
@@ -94,9 +101,10 @@ public class ToDoList implements Serializable
     }
 
     /**
-     * @toString
-     * A method that converts objects to String in order
-     * to read the tasks and projects that where added
+     * Method that converts objects to String in order
+     * to read the tasks and projects that where added.
+     * @param tasks list of tasks.
+     * @return the task objects from the tasks list in form of a String.
      */
 
     public String toString(List<Task> tasks)
@@ -109,7 +117,6 @@ public class ToDoList implements Serializable
     }
 
     /**
-     * @editMenu
      * A submenu for the Edit task option of the Main menu
      * that calls methods that modify sed tasks by different
      * parameters
@@ -161,6 +168,9 @@ public class ToDoList implements Serializable
 
     }
 
+    /**
+     * Method that selects the current task
+     */
     public void selectTask()
     {
 
@@ -172,6 +182,13 @@ public class ToDoList implements Serializable
         }
         System.out.println(">> Task " + activeTask.getTaskName() + " was selected." );
     }
+
+    /**
+     * Method that searches for a specific task
+     * taking the task name as a parameter
+     * @return the task that matches the name that the user
+     * has inserted
+     */
 
     public Task searchTask()
     {
@@ -190,6 +207,10 @@ public class ToDoList implements Serializable
         return null;
     }
 
+    /**
+     * Method that removes the task that
+     * matches the user input
+     */
     public void removeTaskByName()
     {
         Task t = searchTask();
@@ -204,12 +225,9 @@ public class ToDoList implements Serializable
     }
 
     /**
-     * @showByDate
-     * @filterByProject
-     * Methods that filter the tasks according to
-     * date and project name
+     * Method that filters the tasks according to
+     * date
      */
-
     public void showByDate()
     {
         List<Task> tasksByDate = tasks
@@ -219,6 +237,10 @@ public class ToDoList implements Serializable
         System.out.println(toString(tasksByDate));
     }
 
+    /**
+     * Method that filters the project
+     * according to the user input
+     */
     public void filterByProject()
     {
         System.out.println(">> The are projects filtered by name. ");
@@ -240,11 +262,9 @@ public class ToDoList implements Serializable
 
 
     /**
-     * @loadList
-     * A method that saves the current tasks on local
-     * memory
+     * Method that creates a list of tasks
+     * on the local drive
      */
-
     public void loadList()
     {
         File file = new File("list.ser");
@@ -271,6 +291,11 @@ public class ToDoList implements Serializable
         }
     }
 
+    /**
+     * Method that saves the current task list.
+     * to a local drive
+     * @throws IOException in case such an exception should arise.
+     */
     public void saveList() throws IOException
     {
         FileOutputStream fo = new FileOutputStream("list.ser");
@@ -279,11 +304,8 @@ public class ToDoList implements Serializable
     }
 
     /**
-     * @countCompleted
-     * @countOpen
-     * Methods that count the total number of tasks and that
-     * stream the ones that are completed and the ones that are
-     * not in order to print them in the welcome menu.
+     * Method that filters tasks if they are completed
+     * @return the tasks that are marked as completed.
      */
 
     public long countCompleted()
@@ -292,6 +314,10 @@ public class ToDoList implements Serializable
         return x;
     }
 
+    /**
+     * Method that filters tasks if they are not completed.
+     * @return the tasks that are marked as not completed.
+     */
     public long countOpen()
     {
         long y = tasks.stream().filter(u->!u.isCompleted()).count();
@@ -300,7 +326,6 @@ public class ToDoList implements Serializable
 
 
     /**
-     * @fillTestData
      * A method hidden from the user which provides a series of
      * random tasks, projects, dates, etc. used to test the program.
      */
