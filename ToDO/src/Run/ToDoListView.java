@@ -1,3 +1,7 @@
+package Run;
+
+import Display.Prints;
+
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -73,7 +77,7 @@ public class ToDoListView
                 break;
 
             case 9:
-                toDoList.fillTestData();
+                toDoList.testCases();
                 mainMenu();
                 break;
 
