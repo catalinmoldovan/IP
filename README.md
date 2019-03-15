@@ -12,22 +12,22 @@ When the application is started the user will be greated with the main menu:
 ###### >> (4) Save and Quit 
 ###### >>
 
-Main menu character explination:
+Main menu character explanation:
 
-X - represents the number of tasks that are availabe; if none are avalible, the number will indicate "0".
+X - represents the number of tasks that are available; if none are available, the number will indicate "0".
 
-Y - represents the number of tasks that are completed; if none are avalible, the number will indicate "0".
+Y - represents the number of tasks that are completed; if none are avialible, the number will indicate "0".
 
-(1),(2),(3),(4) represent numerical vallues used to select different options that the application provides.
+(1),(2),(3),(4) represent numerical values used to select different options that the application provides.
 
 ___________________________________________________________
-Aplication menu functions:
+Application menu functions:
 
 (1) - displays a sub menu:
 
-">> (1).(1) Show tasks by date: " - allows the user to list all the curent tasks and filters them by date of completion
+">> (1).(1) Show tasks by date: " - allows the user to list all the current tasks and filters them by date of completion
 
-">> (1).(2) Show tasks by project: " - allows the user to list all the curent tasks and allows him to further filter
+">> (1).(2) Show tasks by project: " - allows the user to list all the current tasks and allows him to further filter
                                    the tasks by project name
 ___________________________________________________________                                
 (2) - allows the user to add a new task with three parameters
@@ -43,7 +43,7 @@ ___________________________________________________________
 ###### >> (4) to return to the previous menu
 ___________________________________________________________ 
 
- (3).(1) - allows the user to open an update sub menu wich will allow modification of the task name, date, description
+ (3).(1) - allows the user to open an update sub menu which will allow modification of the task name, date, description
            and project name:
            
 What do you want to change?
@@ -60,7 +60,7 @@ ___________________________________________________________
  
  (3).(1).(3) - prints out a task list and allows the user to add a more detailed task description
  
- (3).(1).(4) - prints out a task list and allows the user to change a project name that a task or more are assinged to
+ (3).(1).(4) - prints out a task list and allows the user to change a project name that a task or more are asinged to
  
  (3).(1).(5) - returns the user to the previous menu.
  ___________________________________________________________ 
