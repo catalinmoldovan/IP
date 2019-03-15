@@ -20,9 +20,9 @@ Y - represents the number of tasks that are completed; if none are avalible, the
 
 (1),(2),(3),(4) represent numerical vallues used to select different options that the application provides.
 
+___________________________________________________________
 Aplication menu functions:
 
-___________________________________________________________
 (1) - displays a sub menu:
 
 ">> (1).(1) Show tasks by date: " - allows the user to list all the curent tasks and filters them by date of completion
