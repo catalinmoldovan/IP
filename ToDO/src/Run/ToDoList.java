@@ -49,7 +49,7 @@ public class ToDoList implements Serializable
 
                 default:
                     System.out.println(">> Please choose a valid option.");
-                    break;
+                    return;
             }
         }
         while (choice.equals("y"));

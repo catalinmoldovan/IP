@@ -23,8 +23,8 @@ public class Prints implements Serializable
                         + "   >> (2) Add New Task \n"
                         + "    >> (3) Edit Task (update, remove, mark as done ) \n"
                         + "     >> (4) Save and Quit \n"
-                        + "      >> Pick an option: \n"
-                        + "      >>");
+                        + "      >> Pick an option. \n"
+                        + "      >>: ");
     }
 
     /**
@@ -33,8 +33,9 @@ public class Prints implements Serializable
      */
     public void showList()
     {
-        System.out.println(">> (1) Show tasks by date: ");
-        System.out.println(" >> (2) Show tasks by project: ");
+        System.out.println(">> (1) Show tasks by date: "
+                + " >> (2) Show tasks by project: "
+                + " >>:" );
     }
 
     /**
@@ -47,7 +48,8 @@ public class Prints implements Serializable
                 + ">> (1) for Update\n"
                 + " >> (2) for Delete\n"
                 + "  >> (3) for marking as Completed\n"
-                + "   >> (4) to return to the previous menu\n");
+                + "   >> (4) to return to the previous menu\n"
+                + "   >>:"  );
     }
 
     /**
@@ -61,6 +63,7 @@ public class Prints implements Serializable
                 + " >> (2) for Task date\n"
                 + "  >> (3) for Task description\n"
                 + "   >> (4) for Project name\n"
-                + "    >> (5) to Return to the previous menu\n");
+                + "    >> (5) to Return to the previous menu\n"
+                +"     >>:");
     }
 }

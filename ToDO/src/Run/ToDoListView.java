@@ -46,7 +46,7 @@ public class ToDoListView
             choice = scn.nextInt();
         } catch (InputMismatchException i)
         {
-            System.out.println("Please insert a number.");
+            System.out.println(">> Please insert a valid option: \n");
             mainMenu();
         }
 

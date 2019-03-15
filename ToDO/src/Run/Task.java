@@ -79,11 +79,15 @@ public class Task implements Comparable, Serializable
     public void setProject()
     {
         Scanner scn = new Scanner(System.in);
-        System.out.println(">> Insert project name: ");
+        System.out.print(">> Insert project name: \n");
         project = scn.nextLine();
-        System.out.println(">> Project name is: " + project);
+        System.out.print(">> Project name is: " + project);
     }
 
+    /**
+     * Get method.
+     * @return returns a task name.
+     */
     public String getTaskName()
     {
         return taskName;
@@ -97,9 +101,9 @@ public class Task implements Comparable, Serializable
     public void setTaskName()
     {
         Scanner scn = new Scanner(System.in);
-        System.out.println(">> Write task name: ");
+        System.out.print("\n >> Write task name: ");
         taskName = scn.nextLine();
-        System.out.println(">> Task name is: " + taskName);
+        System.out.print("\n >> Task name is: " + taskName);
     }
 
     /**
@@ -137,7 +141,6 @@ public class Task implements Comparable, Serializable
      * Method that configures how the task will be displayed.
      * @return the stream or the pattern of the task display.
      */
-
     @Override
     public String toString()
     {
@@ -172,7 +175,7 @@ public class Task implements Comparable, Serializable
 
     public void setDate()
     {
-        System.out.print(">> Write date of completion: (Please use \"dd.MM.yyyy \" format): ");
+        System.out.print("\n>> Write date of completion: (Please use \"dd.MM.yyyy \" format): ");
         Scanner scn = new Scanner(System.in);
 
         boolean success = false;
@@ -187,6 +190,7 @@ public class Task implements Comparable, Serializable
             }   catch (ParseException e)
             {
                 System.out.println(">> Please enter the date in the requested format");
+
             }
         }
         while(!success);
