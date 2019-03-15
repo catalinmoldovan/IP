@@ -7,8 +7,6 @@ public class ToDoListView
     ToDoList toDoList = new ToDoList();
     Prints prints = new Prints();
 
-
-
     public static void main(String[] args)
     {
         ToDoListView toDoListVIew = new ToDoListView();
@@ -17,6 +15,10 @@ public class ToDoListView
         toDoListVIew.mainMenu();
     }
 
+    /**
+     * Method that displays the tasks, separating them
+     * in completed and incomplete
+     */
     public void count()
     {
         System.out.println(" >> Welcome to ToDoLy \n "
@@ -25,6 +27,10 @@ public class ToDoListView
                 +" tasks is/are done!");
     }
 
+    /**
+     * Method that displays a initial menu for the user,
+     * providing the user manual options
+     */
     public void mainMenu()
     {
         int choice = 1;

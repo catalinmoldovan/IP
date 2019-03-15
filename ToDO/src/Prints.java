@@ -9,6 +9,10 @@ import java.io.Serializable;
 public class Prints implements Serializable
 {
 
+    /**
+     * Method the prints out the main menu,
+     * and the first menu that the user sees.
+     */
     public void mainMenu()
     {
         System.out.print(
@@ -20,12 +24,20 @@ public class Prints implements Serializable
                         + "      >>");
     }
 
+    /**
+     * Method that prints out the menu that the uses sees
+     * at the list changes
+     */
     public void showList()
     {
         System.out.println(">> (1) Show tasks by date: ");
         System.out.println(" >> (2) Show tasks by project: ");
     }
 
+    /**
+     * Method that prints out the submenu from the edit task
+     * option in the Main Menu
+     */
     public void editTaskMenu()
     {
         System.out.println(">> Please chose a option: \n"
@@ -35,6 +47,10 @@ public class Prints implements Serializable
                 + "   >> (4) to return to the previous menu\n");
     }
 
+    /**
+     * Method that prints out the submenu from the Update option
+     * in the Edit Task Menu
+     */
     public void editTaskByFactors()
     {
         System.out.println("What do you want to change?\n"
