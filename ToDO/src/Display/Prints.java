@@ -1,3 +1,5 @@
+package Display;
+
 import java.io.Serializable;
 
 /**
@@ -16,7 +18,8 @@ public class Prints implements Serializable
     public void mainMenu()
     {
         System.out.print(
-                "  >> (1) Show Task List (by date or project)\n"
+                ">> Pick an option:\n"
+                + "  >> (1) Display Task List (by date or project)\n"
                         + "   >> (2) Add New Task \n"
                         + "    >> (3) Edit Task (update, remove, mark as done ) \n"
                         + "     >> (4) Save and Quit \n"
@@ -57,7 +60,7 @@ public class Prints implements Serializable
                 + ">> (1) for Task name\n"
                 + " >> (2) for Task date\n"
                 + "  >> (3) for Task description\n"
-                + "   >> (4) for Task name\n"
+                + "   >> (4) for Project name\n"
                 + "    >> (5) to Return to the previous menu\n");
     }
 }

@@ -1,3 +1,7 @@
+package Run;
+
+import Display.Prints;
+
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,8 +22,8 @@ public class Task implements Comparable, Serializable
     private String project;
     private boolean isCompleted;
     private Date date;
-    Prints prints = new Prints();
     private String description;
+    Prints prints = new Prints();
 
     /**
      * A task constructor calling parameter
@@ -47,6 +51,20 @@ public class Task implements Comparable, Serializable
         this.date = date;
         isCompleted = false;
     }
+
+    /**
+     * Constructor for the task class
+     * @param name a string that contains the task name.
+     * @param project a string that contains the project name.
+     * @param completed statement of task completion, i.e. true or false.
+     */
+    public Task(String name, String project, Boolean completed)
+    {
+        this.taskName = name;
+        this.project = project;
+        this.isCompleted = completed;
+    }
+
 
     public String getProject()
     {
@@ -135,18 +153,6 @@ public class Task implements Comparable, Serializable
         return s;
     }
 
-    /**
-     * Constructor for the task class
-     * @param name a string that contains the task name.
-     * @param project a string that contains the project name.
-     * @param completed statement of task completion, i.e. true or false.
-     */
-    public Task(String name, String project, Boolean completed)
-    {
-        this.taskName = name;
-        this.project = project;
-        this.isCompleted = completed;
-    }
 
     /**
      * Method that modifies the task description
@@ -169,7 +175,8 @@ public class Task implements Comparable, Serializable
         System.out.print(">> Write date of completion: (Please use \"dd.MM.yyyy \" format): ");
         Scanner scn = new Scanner(System.in);
 
-        boolean success=false;
+        boolean success = false;
+
         do
         {
             try
@@ -195,35 +202,35 @@ public class Task implements Comparable, Serializable
     {
         prints.editTaskByFactors();
         Scanner scanner = new Scanner(System.in);
-        String editChoice=null;
-        String choices[]={"1","2","3","4","5"};
+        Integer editChoice = 0;
+        Integer choices[]={1,2,3,4,5};
 
         while (!Arrays.asList(choices).contains(editChoice))
         {
-            editChoice=scanner.next();
+            editChoice=scanner.nextInt();
 
             switch(editChoice)
             {
-                case "1":
+                case 1:
                     setTaskName();
-                    System.out.println(">> Task was renamed");
+                    System.out.println(">> Task was renamed\n");
                     editTask();
                     break;
 
-                case "2":
+                case 2:
                     setDate();
                     return;
 
-                case "3":
+                case 3:
                     setDescription();
                     editTask();
                     break;
 
-                case "4":
+                case 4:
                     setProject();
                     return;
 
-                case "5":
+                case 5:
                     return;
 
                 default:

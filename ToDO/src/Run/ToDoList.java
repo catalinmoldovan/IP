@@ -1,3 +1,7 @@
+package Run;
+
+import Display.Prints;
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -11,12 +15,14 @@ import java.util.stream.Collectors;
 public class ToDoList implements Serializable
 {
     private static final long serialVersionUID = 1L;
-    public ArrayList<Task> tasks;
+
+    private ArrayList<Task> tasks;
     private Task activeTask = null;
-    Prints prints = new Prints();
     private final int NUMBEROFTASKS = 10;
     private int index;
+    private Prints prints = new Prints();
     Scanner scn = new Scanner(System.in);
+
 
     /**
      * Method that adds a new task to the list
@@ -169,6 +175,15 @@ public class ToDoList implements Serializable
     }
 
     /**
+     * Getter method.
+     * @return a saved task list.
+     */
+    public ArrayList<Task> getTasks()
+    {
+        return tasks;
+    }
+
+    /**
      * Method that selects the current task
      */
     public void selectTask()
@@ -221,7 +236,7 @@ public class ToDoList implements Serializable
             return;
         }
         tasks.remove(t);
-        System.out.println(">>Task " + t.getTaskName() + " is removed.");
+        System.out.println(">> Task " + t.getTaskName() + " is removed.");
     }
 
     /**
@@ -310,7 +325,9 @@ public class ToDoList implements Serializable
 
     public long countCompleted()
     {
-        long x = tasks.stream().filter(t->t.isCompleted()).count();
+        long x = tasks.stream()
+                .filter(t->t.isCompleted())
+                .count();
         return x;
     }
 
@@ -320,7 +337,9 @@ public class ToDoList implements Serializable
      */
     public long countOpen()
     {
-        long y = tasks.stream().filter(u->!u.isCompleted()).count();
+        long y = tasks.stream()
+                .filter(u->!u.isCompleted())
+                .count();
         return y;
     }
 
@@ -330,7 +349,7 @@ public class ToDoList implements Serializable
      * random tasks, projects, dates, etc. used to test the program.
      */
 
-    public void fillTestData()
+    public void testCases()
     {
         Random rnd =new Random();
 
