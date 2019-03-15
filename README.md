@@ -15,6 +15,7 @@ When the application is started the user will be greated with the main menu:
 Main menu character explination:
 
 X - represents the number of tasks that are availabe; if none are avalible, the number will indicate "0".
+
 Y - represents the number of tasks that are completed; if none are avalible, the number will indicate "0".
 
 (1),(2),(3),(4) represent numerical vallues used to select different options that the application provides.
