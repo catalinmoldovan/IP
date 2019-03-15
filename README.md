@@ -1,6 +1,15 @@
 # IP
 To do list User Manual
 
+
+#### Description:
+
+An easy To Do List that allows the user to add new tasks with specific
+parameters like date and project.
+
+It allows the user to modify the task acording to the options that the 
+application provides.
+
 When the application is started the user will be greated with the main menu:
 
 ###### >> Welcome to ToDoLy
